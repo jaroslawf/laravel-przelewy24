@@ -119,6 +119,7 @@ class Transfers24Test extends UnitTestCase
 
         $error_array = [
             'p24_url_status' => 'Incorrect_URL',
+            0 => 'p24_url_status:Incorrect_URL'
         ];
 
         $handler->segmentToDescription('p24_url_status:Incorrect_URL');
@@ -163,7 +164,7 @@ class Transfers24Test extends UnitTestCase
         $this->refreshHandler();
         $error_array = [
             'p24_url_return' => 'Incorrect_URL',
-            'p24_url_status' => 'Incorrect_URL',
+            '0' => 'p24_url_return:Incorrect_URL',
         ];
         $this->http_answer['body'] = 'errorMessage=p24_url_return:Incorrect_URL&p24_url_status:Incorrect_URL';
         $this->http_response->addBody($this->http_answer['body']);
